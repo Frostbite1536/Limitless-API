@@ -94,11 +94,16 @@ docs/
 │   ├── python.md            # Python implementation
 │   ├── java.md              # Java implementation
 │   └── typescript.md        # TypeScript implementation
-└── guides/
-    ├── authentication.md    # Auth flow guide
-    ├── placing-orders.md    # Order creation guide
-    ├── websockets.md        # Real-time data guide
-    └── faq.md               # Common questions
+├── guides/
+│   ├── authentication.md    # Auth flow guide
+│   ├── placing-orders.md    # Order creation guide
+│   ├── websockets.md        # Real-time data guide
+│   └── faq.md               # Common questions
+└── user-questions/          # Real developer issues
+    ├── smart-wallet-signer-mismatch.md
+    ├── signature-verification-failed.md
+    ├── order-not-filling.md
+    └── invalid-token-id.md
 ```
 
 ## Rate Limits

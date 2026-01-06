@@ -34,11 +34,17 @@ Limitless-API/
     │   ├── python.md
     │   ├── typescript.md
     │   └── java.md
-    └── guides/               # Task-focused tutorials
-        ├── authentication.md
-        ├── placing-orders.md
-        ├── websockets.md
-        └── faq.md
+    ├── guides/               # Task-focused tutorials
+    │   ├── authentication.md
+    │   ├── placing-orders.md
+    │   ├── websockets.md
+    │   └── faq.md
+    └── user-questions/       # Real issues from developers
+        ├── README.md
+        ├── smart-wallet-signer-mismatch.md
+        ├── signature-verification-failed.md
+        ├── order-not-filling.md
+        └── invalid-token-id.md
 ```
 
 ## Official Documentation
@@ -84,6 +90,7 @@ The `docs/` folder contains **AI-generated documentation** designed specifically
 | Place an order | [Placing Orders Guide](docs/guides/placing-orders.md) |
 | Real-time data | [WebSocket Guide](docs/guides/websockets.md) |
 | Common questions | [FAQ](docs/guides/faq.md) |
+| Troubleshooting errors | [User Questions](docs/user-questions/) |
 
 ## Using with Claude Code
 
