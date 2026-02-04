@@ -119,41 +119,7 @@ categories = response.json()
 print(categories)
 
 # Look for your category and use its ID
-```
-
-### Known Category IDs
-
-| Category ID | Name | Description |
-|-------------|------|-------------|
-| 49 | Football Matches | Live football/soccer match outcomes |
-| 50 | Off-the-Pitch | Football-related markets not tied to specific matches |
-
-### Important: Related Content May Span Categories
-
-Some topics are split across multiple categories. For example, football content is split between:
-- **Category 49** ("Football Matches") - Match results, scores, goals
-- **Category 50** ("Off-the-Pitch") - Transfers, awards, manager changes
-
-To get ALL football markets, query both:
-
-```python
-import requests
-
-# Get Football Matches (category 49)
-matches = requests.get(
-    "https://api.limitless.exchange/markets/active/49",
-    params={"limit": 100}
-).json()
-
-# Get Off-the-Pitch (category 50)
-off_pitch = requests.get(
-    "https://api.limitless.exchange/markets/active/50",
-    params={"limit": 100}
-).json()
-
-# Combine all football markets
-all_football = matches['markets'] + off_pitch['markets']
-print(f"Total football markets: {len(all_football)}")
+# Example: Category 50 is "off-the-pitch"
 ```
 
 ## Tips
