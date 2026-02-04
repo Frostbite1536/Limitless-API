@@ -257,6 +257,62 @@ Search markets by semantic similarity.
 }
 ```
 
+## Category Reference
+
+The API uses numeric category IDs to organize markets. Use `/markets/categories/count` to discover which categories have active markets.
+
+### Known Category IDs
+
+| Category ID | Name | Description |
+|-------------|------|-------------|
+| 49 | Football Matches | Live football/soccer match outcomes |
+| 50 | Off-the-Pitch | Football-related markets not tied to specific matches (transfers, awards, etc.) |
+
+**Note**: Football-related content is split across multiple categories:
+- **Category 49** ("Football Matches") - Markets about match results, scores, goals
+- **Category 50** ("Off-the-Pitch") - Markets about transfers, manager changes, awards, etc.
+
+To find all football markets, query both categories:
+
+```python
+import requests
+
+# Get Football Matches (category 49)
+matches = requests.get(
+    "https://api.limitless.exchange/markets/active/49",
+    params={"limit": 100}
+).json()
+
+# Get Off-the-Pitch (category 50)
+off_pitch = requests.get(
+    "https://api.limitless.exchange/markets/active/50",
+    params={"limit": 100}
+).json()
+
+# Combine all football markets
+all_football = matches['markets'] + off_pitch['markets']
+print(f"Total football markets: {len(all_football)}")
+```
+
+### Discovering Categories
+
+To find all available categories and their market counts:
+
+```python
+import requests
+
+response = requests.get(
+    "https://api.limitless.exchange/markets/categories/count"
+)
+categories = response.json()
+
+# Shows: {"categories": {"49": 15, "50": 8, ...}, "total": 150}
+for cat_id, count in categories['categories'].items():
+    print(f"Category {cat_id}: {count} markets")
+```
+
+---
+
 ## Market Data Fields
 
 ### Common Fields
